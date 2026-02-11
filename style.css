@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #111;
+}
+
+/* SCROLL SNAP */
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.section {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+}
+
+.section.light {
+    background: #f6f7f9;
+}
+
+/* NAV */
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 25px 10%;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(238, 238, 238, 0.57);
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar li {
+    margin-left: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #444;
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+}
+
+/* HERO */
+.hero {
+    overflow: hidden;
+}
+
+#grid-canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 60px;
+    line-height: 1.1;
+}
+
+.hero p {
+    margin-top: 25px;
+    color: #555;
+}
+
+/* CONTENT */
+.content {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.content.narrow {
+    max-width: 700px;
+}
+
+h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    padding: 30px;
+    border: 1px solid #eee;
+    background: #fff;
+}
+
+/* CAD COLUMN LAYOUT */
+.cad-wrapper-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.stl-viewer {
+    width: 100%;
+    height: 400px;
+    background: #f5f6f8;
+    border: 1px solid #eee;
+}
+
+.cad-info p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.cad-buttons {
+    margin-top: 20px;
+}
+
+.cad-buttons button {
+    padding: 10px 18px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+}
+
+.cad-buttons button:hover {
+    background: #111;
+    color: white;
+}
+
+
+/* ===== PROJECTS GRID ===== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid #eaeaea;
+    transition: 0.3s ease;
+}
+.project-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
+
+.project-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 15px 0;
+}
+
+.project-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.project-tag {
+    display: inline-block;
+    font-size: 12px;
+    padding: 6px 12px;
+    background: #f2f3f5;
+    border: 1px solid #e2e2e2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}

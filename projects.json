@@ -1,0 +1,16 @@
+{
+  "rocket": {
+    "title": "Rocket Thrust Vector Control",
+    "category": "Control Systems",
+    "description": "Closed-loop thrust vector control system designed for real-time attitude stabilization using IMU feedback.",
+    "tech": ["STM32", "PID Control", "IMU Sensor Fusion", "Mechanical CAD"],
+    "image": "assets/rocket.jpg"
+  },
+  "swarm": {
+    "title": "Swarm Robotics Framework",
+    "category": "Robotics",
+    "description": "Decentralized multi-agent robotic coordination architecture with SLAM and path planning.",
+    "tech": ["Python", "SLAM", "Computer Vision", "Embedded Systems"],
+    "image": "assets/swarm.jpg"
+  }
+}

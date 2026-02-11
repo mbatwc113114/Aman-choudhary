@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aman Choudhary | Robotics & Aerospace</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #111;
+}
+
+/* ===== SCROLL SNAP ===== */
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.section {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+}
+
+.section.light {
+    background: #f6f7f9;
+}
+
+/* ===== NAV ===== */
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 25px 10%;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.9);
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar li {
+    margin-left: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #444;
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* ===== HERO ===== */
+.hero {
+    overflow: hidden;
+}
+
+#grid-canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 60px;
+    line-height: 1.1;
+}
+
+.hero p {
+    margin-top: 25px;
+    color: #555;
+}
+
+/* ===== CONTENT ===== */
+.content {
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* ===== CAD SECTION ===== */
+.cad-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.stl-viewer {
+    width: 100%;
+    height: 400px;
+    background: #f5f6f8;
+    border: 1px solid #eee;
+}
+
+.cad-info p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.cad-buttons {
+    margin-top: 20px;
+}
+
+.cad-buttons button {
+    padding: 10px 18px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+}
+
+.cad-buttons button:hover {
+    background: #111;
+    color: white;
+}
+
+</style>
+</head>
+
+<body>
+    
+    <canvas id="grid-canvas"></canvas>
+
+<nav class="navbar">
+    <div class="logo">AMAN CHOUDHARY</div>
+    <ul>
+        <li><a href="#cad">CAD</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        
+        <li><a href="https://mbatwc113114.github.io/Rocket/index.html">Roketry</a></li>
+    </ul>
+</nav>
+
+<div class="scroll-container">
+
+<!-- HERO -->
+<section class="section hero">
+
+    <div class="hero-content">
+        <h1>
+            Robotics, Aerospace &<br>
+            Control Systems —<br>
+            Built from Ground Up.
+        </h1>
+        <p>
+            Designing integrated mechanical systems from CAD to embedded intelligence.
+        </p>
+    </div>
+</section>
+
+<!-- CAD SECTION -->
+<section class="section" id="cad">
+    <div class="content">
+        <h2>CAD Projects</h2>
+
+        <div class="cad-wrapper">
+            <div class="stl-viewer" id="stlViewer"></div>
+
+            <div class="cad-info">
+                <h3>Rocket Thrust Vector Control Assembly</h3>
+                <p>
+                    Fully modeled mechanical stabilization system designed for
+                    thrust vector correction.
+                </p>
+
+                <div class="cad-buttons">
+                    <button onclick="loadModel('models/rocket.stl')">Rocket</button>
+                    <button onclick="loadModel('models/gokart.stl')">Go-Kart</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section class="section light" id="projects">
+    <div class="content">
+        <h2>Engineering Projects</h2>
+
+        <div class="projects-grid">
+
+           <div class="project-card">
+    <a href="project.html?id=rocket">
+        <div class="project-tag">Control Systems</div>
+        <h3>Rocket Thrust Vector Control</h3>
+        <p>Closed-loop stabilization system using IMU feedback.</p>
+    </a>
+</div>
+
+<div class="project-card">
+    <a href="project.html?id=swarm">
+        <div class="project-tag">Robotics</div>
+        <h3>Swarm Robotics Framework</h3>
+        <p>Multi-agent decentralized coordination system.</p>
+    </a>
+</div>
+
+
+           
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section light" id="contact">
+    <div class="content">
+        <h2>Contact</h2>
+        <p>mbatwc@email.com</p>
+        <p>Raigarh, India</p>
+    </div>
+</section>
+
+</div>
+
+<!-- ===== THREE JS r128 (STABLE) ===== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+
+<script src="script.js"></script>
+<!-- <script>
+
+// ===== HERO GRID ANIMATION =====
+
+const canvas = document.getElementById("grid-canvas");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+let time = 0;
+
+function drawGrid() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const spacing = 50;
+    ctx.strokeStyle = "#e6e6e6";
+
+    for (let y = 0; y <= canvas.height; y += spacing) {
+        ctx.beginPath();
+        for (let x = 0; x <= canvas.width; x += 10) {
+            const offset = Math.sin((x * 0.01) + time) * 8;
+            ctx.lineTo(x, y + offset);
+        }
+        ctx.stroke();
+    }
+
+    for (let x = 0; x <= canvas.width; x += spacing) {
+        ctx.beginPath();
+        for (let y = 0; y <= canvas.height; y += 10) {
+            const offset = Math.cos((y * 0.01) + time) * 8;
+            ctx.lineTo(x + offset, y);
+        }
+        ctx.stroke();
+    }
+
+    time += 0.02;
+    requestAnimationFrame(drawGrid);
+}
+drawGrid();
+
+
+// ===== STL VIEWER =====
+
+let scene, camera, renderer, controls, mesh;
+const viewerContainer = document.getElementById("stlViewer");
+
+scene = new THREE.Scene();
+
+camera = new THREE.PerspectiveCamera(
+    45,
+    viewerContainer.clientWidth / viewerContainer.clientHeight,
+    0.1,
+    1000
+);
+camera.position.set(0, 0, 120);
+
+renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(viewerContainer.clientWidth, viewerContainer.clientHeight);
+viewerContainer.appendChild(renderer.domElement);
+
+const light = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(1, 1, 1);
+scene.add(light);
+
+const ambient = new THREE.AmbientLight(0xaaaaaa);
+scene.add(ambient);
+
+controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+function loadModel(path) {
+    const loader = new THREE.STLLoader();
+
+    loader.load(path, function (geometry) {
+
+        if (mesh) scene.remove(mesh);
+
+        geometry.center();
+
+        const material = new THREE.MeshStandardMaterial({
+            color: 0x888888
+        });
+
+        mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+    });
+}
+
+loadModel("models/rocket.stl");
+
+function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+}
+animate();
+
+</script> -->
+
+</body>
+</html>
