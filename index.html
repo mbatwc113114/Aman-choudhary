@@ -73,7 +73,29 @@ body {
     font-weight: 700;
     font-size: 20px;
 }
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
 
+.hero-content {
+    max-width: 55%;
+}
+
+.hero-image {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+    object-fit: cover;
+}
 /* ===== HERO ===== */
 .hero {
     overflow: hidden;
@@ -102,7 +124,21 @@ body {
     margin-top: 25px;
     color: #555;
 }
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
 
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+        width: 100%;
+    }
+}
 /* ===== CONTENT ===== */
 .content {
     max-width: 900px;
@@ -174,16 +210,25 @@ h2 {
 <!-- HERO -->
 <section class="section hero">
 
-    <div class="hero-content">
-        <h1>
-            Robotics, Aerospace &<br>
-            Control Systems —<br>
-            Built from Ground Up.
-        </h1>
-        <p>
-            Designing integrated mechanical systems from CAD to embedded intelligence.
-        </p>
+    <div class="hero-container">
+        
+        <div class="hero-content">
+            <h1>
+                Robotics, Aerospace &<br>
+                Control Systems —<br>
+                Built from Ground Up.
+            </h1>
+            <p>
+                Designing integrated mechanical systems from CAD to embedded intelligence.
+            </p>
+        </div>
+
+        <div class="hero-image">
+            <img src="your-image.png" alt="Aman Choudhary">
+        </div>
+
     </div>
+
 </section>
 
 <!-- CAD SECTION -->
